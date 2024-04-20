@@ -1,0 +1,16 @@
+* {
+    border-style: solid;
+    border-color: blue;
+}
+#container {
+    height: 800px;
+    width: 800px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column wrap;
+}
+.square {
+    background-color: white;
+    width: 43.6px;
+    height: 43.6px;
+}
