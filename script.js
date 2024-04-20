@@ -2,5 +2,6 @@
 const matrix = document.querySelector("#matrix");
 for (let i = 0; i < 32; i++) {
     const grid_element = document.createElement("div");
+    div.classList.add("grid");
     matrix.appendChild(grid_element);
 };
