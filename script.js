@@ -5,12 +5,9 @@ let size = defaultSize;
 const board = document.querySelector("#container");
 const resizeButton = document.querySelector("#size");
 const resetButton = document.querySelector("#reset");
-// more global variables need to be added
-// here
-//
 function createGrid(){
     numberOfSquares = size * size;
-    const squareSize = 800.0 / size;
+    const squareSize = 800.0 / size - 0.01;
     //clear the board before creating the grid
     board.innerHTML = ""; 
     for (let i = 0; i < numberOfSquares; i++) {
