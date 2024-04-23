@@ -1,31 +1,32 @@
 // global variables here
-let defaultSize = 16;
-let numberOfSquares = Math.pow(defaultSize, 2);
+const defaultSize = 16;
 let size = defaultSize;
-const board = document.querySelector("#container");
-const resizeButton = document.querySelector("#size");
+let backgroundColor = "black";
+const board = document.querySelector("#board");
+const resizeButton = document.querySelector("#resize");
 const resetButton = document.querySelector("#reset");
 function createGrid(){
-    numberOfSquares = size * size;
-    const squareSize = 800.0 / size - 0.01;
     //clear the board before creating the grid
     board.innerHTML = ""; 
-    for (let i = 0; i < numberOfSquares; i++) {
-	const square = document.createElement("div");
-        square.classList.add("square");
-        square.style.width = squareSize + "px";
-        square.style.height = squareSize + "px";
-        board.appendChild(square);
-        // call the coloring effect on mouse hovering on each square
-        square.addEventListener("mouseover", () => {
-	square.style.backgroundColor = "blue";
-	});
-	// call the reset effect on each square when resetButton is clicked
-	resetButton.addEventListener("click", () => {
-	square.style.backgroundColor = "white";});
+    for (let rows = 0; rows < size; rows++) {
+	    const row = document.createElement("div");
+        row.classList.add("row");
+        board.appendChild(row);
+        for (let columns = 0; columns < size; columns++) {
+            const column = document.createElement("div");
+            column.classList.add("column");
+            row.appendChild(column);
+            column.addEventListener("mouseover", () => {
+                column.style.backgroundColor = backgroundColor;
+            });
+            resetButton.addEventListener("click", () => {
+                column.style.backgroundColor = "white";
+            });
+        };
+        
     };
 }
-// Size button behavior: assign custom grid size
+// Resize button behavior: assign custom grid size
 function resizeGrid(){
     resizeButton.addEventListener("click", () => {
         let newSize = prompt("insert size: ");

@@ -1,22 +1,27 @@
-* {
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
-#container {
+#board {
     border: 2px dotted red;
     height: 800px;
     width: 800px;
     box-sizing: content-box;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
-.square {
+.row {
+    display: flex;
+    flex-direction: row;
+}
+.row, .column {
     border-style: solid;
-    border-width: 0.01px;
-    border-color: grey;
-    box-sizing: border-box;
+    border-width: 1px;
+    border-color: rgb(127, 126, 129);
     background-color: white;
+    flex: 1 1 auto;
+
 }
 
