@@ -5,6 +5,11 @@ let backgroundColor = "black";
 const board = document.querySelector("#board");
 const resizeButton = document.querySelector("#resize");
 const resetButton = document.querySelector("#reset");
+const randomizeButton = document.querySelector("#randomize");
+let randomColors = false;
+function randomizeRGB() {
+    return Math.floor((Math.random()*256));
+}
 function createGrid(){
     //clear the board before creating the grid
     board.innerHTML = ""; 
@@ -14,13 +19,24 @@ function createGrid(){
         board.appendChild(row);
         for (let columns = 0; columns < size; columns++) {
             const column = document.createElement("div");
+            let opacity = 0;
             column.classList.add("column");
             row.appendChild(column);
+            // Adding coloring event
             column.addEventListener("mouseover", () => {
-                column.style.backgroundColor = backgroundColor;
+                if (randomColors) {
+                    column.style.backgroundColor = `rgb(${randomizeRGB()}, ${randomizeRGB()}, ${randomizeRGB()})`;
+                } else {
+                    column.style.backgroundColor = backgroundColor;
+                };
+                opacity += 0.1;
+                column.style.opacity = opacity.toString();
             });
             resetButton.addEventListener("click", () => {
                 column.style.backgroundColor = "white";
+            });
+            randomizeButton.addEventListener("click", () => {
+                randomColors = true;
             });
         };
         
