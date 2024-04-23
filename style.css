@@ -1,3 +1,12 @@
+*{
+    font-family: "Montserrat", sans-serif;
+}
+.title{
+    font-weight: bold;
+    font-size: 50px ;
+    color: #FFC470;
+    text-shadow: 1px 1px 2px black, 0 0 25px #DD5746, 0 0 5px #DD5746;
+}
 body {
     background-color: #4793AF;
     display: flex;
@@ -22,12 +31,27 @@ body {
 }
 #resize, #randomize, #reset {
     padding: 10px;
+    margin: 10px;
+    font-weight: 600;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#resize {
+    background: #FFC470;
+    color: white;
+}
+#reset {
+    background: #DD5746;
+    color: white;
 }
 #buttonContainer {
     display: flex;
     justify-content: space-evenly;
-    flex 1 1 auto;
+    flex: 1 1 auto;
 }
 #randomize, #reset {
-
+    border-radius: 10px;
+}
+#randomize {
+    color: white;
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }

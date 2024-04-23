@@ -29,7 +29,7 @@ function createGrid(){
                 } else {
                     column.style.backgroundColor = backgroundColor;
                 };
-                opacity += 0.1;
+                opacity += 0.3;
                 column.style.opacity = opacity.toString();
             });
             resetButton.addEventListener("click", () => {
